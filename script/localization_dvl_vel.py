@@ -34,8 +34,6 @@ time_values_dvl = df['field.header.stamp'].values
 synchronized_orientations = synchronize_orientation(time_values_dvl, timestamps_imu, orientation)
 
 # Initialize variables
-# positions_x = [1.2991]
-# positions_y = [0.6084]
 positions_x = [0]
 positions_y = [0]
 positions_z = [0]
@@ -52,10 +50,6 @@ for index, row in df.iterrows():
     vel_x = row['field.linear_acceleration.x']
     vel_y = row['field.linear_acceleration.y']
     vel_z = row['field.linear_acceleration.z']
-
-    # velocity_x = positions_x[-1] + vel_x * dt
-    # velocity_y = positions_y[-1] + vel_y * dt
-    # velocity_z = positions_z[-1] - vel_z * dt
 
     # Get the corresponding orientation
     orientation_quat = synchronized_orientations[index]
@@ -95,32 +89,6 @@ syn_orient_quat = np.array(syn_orient_quat)
 print("Length of syn_orient_quat: ", len(syn_orient_quat))
 print("First orientation:", syn_orient_quat[0])
 
-# Plotting the trajectory
-
-# plt.figure(figsize=(10, 6))
-# # time_values = np.array(df['%time'])  # Convert time values to numpy array
-time_values = np.array(df['field.header.stamp'])  # Convert time values to numpy array
-# plt.plot(positions_x[1:], positions_y[1:], label='DVL')
-# # plt.plot(positions_x, positions_y, label='DVL Vel')
-# # Start and end points
-# plt.plot(positions_x[1], positions_y[1], 'go', label='Start')
-# plt.plot(positions_x[-1], positions_y[-1], 'ro', label='End')
-# # plt.plot(positions_x[0], positions_y[0], 'go', label='Start')
-# # plt.plot(positions_x[-1], positions_y[-1], 'ro', label='End')
-# plt.xlabel('X Position')
-# plt.ylabel('Y Position')
-# plt.title('Vehicle Trajectory Estimated by Dead Reckoning')
-# plt.legend()
-
-# plt.show()
-
-# # debug
-# print("Length of positions_x: ", len(positions_x))
-# print("Length of time_values: ", len(time_values))
-# print("Length of positions_x[1:]: ", len(positions_x[1:]))
-# print("positions_x[0]:", positions_x[0])
-# print("positions_x[1]: ", positions_x[1])
-
 # Calculate the variance of DVL measurements
 variance_x = np.var(df['field.linear_acceleration.x'])
 variance_y = np.var(df['field.linear_acceleration.y'])
@@ -131,7 +99,7 @@ print("Variance of DVL velocity measurements in Y direction:", variance_y)
 print("Variance of DVL velocity measurements in Z direction:", variance_z)
 
 # Save results to TXT in TUM format (time tx ty tz qx qy qz qw)
-# with open('dvl_pos_vel_2_pose.txt', 'w') as f:
+# with open('dvl_pos_vel.txt', 'w') as f:
 #     for i in range(len(time_values)):
 #         timestamp = time_values[i] / 1e9  # Convert from nanoseconds to seconds
 #         tx = positions_x[i+1]
