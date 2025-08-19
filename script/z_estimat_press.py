@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 # Load the fluid pressure data from the CSV file
-df = pd.read_csv('press_2.csv')
+df = pd.read_csv('press.csv')
 
 # Extract the pressure values
 press = df['field.fluid_pressure'].values
@@ -21,10 +21,6 @@ for i in range(0, len(z)):
         z[i] = z[i-1]
     if abs(z[i]-z[i-1]) > 0.06:
             z[i] = z[i-1]
-
-# Smooth the z coordinates
-for i in range(1, len(z)):
-    z[i] = 0.9 * z[i-1] + 0.1 * z[i]
 
 # Plot the pressure values over time
 import matplotlib.pyplot as plt
