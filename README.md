@@ -1,10 +1,15 @@
 # ua_avip
 Multi-Modal Fusion for Underwater Localization
 
-## Demo
+## Demo (Speed *5)
+
+![](demo3.gif)
+
+![](demo4.gif)
 
 ![](demo1.gif)
 
+![](demo2.gif)
 
 ## Performance Evaluation and Comparison
 ### Pool 01
