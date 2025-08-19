@@ -3,8 +3,8 @@ Multi-Modal Fusion for Underwater Localization
 
 ## Performance Evaluation and Comparison
 ### Pool 01
-![](img/trajectory_comparison_xy_seq01.jpg)
+![](img/traj_xy_pool01.jpg)
 ### Pool 02
-![](img/seq02_traj_1.png)
+![](img/traj_xy_pool02.png)
 ### Pool 03
 ![](img/traj_xy_pool03.png)
