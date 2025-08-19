@@ -5,8 +5,6 @@ import numpy as np
 # Load the data from csv
 df = pd.read_csv('dvl_pos_2.csv')
 
-# time_values_dvl_pos = np.array(df['field.header.stamp'])  # Convert time values to numpy array
-
 # Extract the positions estimated by DVL
 positions_x = df['field.orientation.x'].values
 positions_y = df['field.orientation.y'].values
@@ -21,11 +19,6 @@ yaw = df['field.angular_velocity.z'].values * np.pi / 180  # Convert to radians
 roll = roll - np.pi
 # yaw minus 90 degrees
 yaw = yaw - np.pi / 2
-
-# Debugging: check the values of roll
-# print("Roll values:", roll)
-if np.any(roll > 0):
-    print("*********************************Roll values:", roll)
 
 # Convert euler angles to quaternion
 def euler_to_quaternion(roll, pitch, yaw):
@@ -47,17 +40,6 @@ def euler_to_quaternion(roll, pitch, yaw):
     qz = cr * cp * sy - sr * sp * cy
 
     return qw, qx, qy, qz
-
-# # Transform the positions to the world coordinate system
-# for i in range(1, len(positions_x)):
-#     # Calculate the change in position
-#     dx = np.cos(yaw[i]) * positions_x[i] - np.sin(yaw[i]) * positions_y[i]
-#     dy = np.sin(yaw[i]) * positions_x[i] + np.cos(yaw[i]) * positions_y[i]
-
-#     # Update the positions
-#     positions_x[i] = positions_x[i-1] + dx
-#     positions_y[i] = positions_y[i-1] + dy
-
 
 positions_x = - positions_x + positions_x[0]
 positions_y = - positions_y + positions_y[0]
@@ -97,7 +79,7 @@ print("Variance of DVL position measurements in Y direction:", variance_y)
 print("Variance of DVL position measurements in Z direction:", variance_z)
 
 # Save results to TXT in TUM format (time tx ty tz qx qy qz qw)
-with open('dvl_pos_dr_2_pose_2.txt', 'w') as f:
+with open('dvl_pos_dr.txt', 'w') as f:
     for i in range(len(time_values)):
         timestamp = time_values[i] / 1e9  # Convert from nanoseconds to seconds
         tx = positions_x[i]
