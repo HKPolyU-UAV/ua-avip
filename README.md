@@ -3,7 +3,7 @@ Multi-Modal Fusion for Underwater Localization
 
 ## Demo
 
-![Uploading 无标题视频——使用Clipchamp制作.gif…]()
+![](demo.gif)
 
 
 ## Performance Evaluation and Comparison
