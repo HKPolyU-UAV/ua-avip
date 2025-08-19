@@ -1,13 +1,8 @@
 import csv
 import numpy as np
 
-# input_file = '/home/xyb/underwaterDataset/casia/CASIA_PolyU_SLAM_datasets_20241108/error_calcu_2/global_cam_positions_2.csv'
-# output_file = '/home/xyb/underwaterDataset/casia/CASIA_PolyU_SLAM_datasets_20241108/error_calcu_2/global_cam_displacements_2.csv'
-# input_file = '/home/xyb/underwaterDataset/casia/CASIA_PolyU_SLAM_datasets_20241108/error_calcu_1/global_cam_positions_1.csv'
-# output_file = '/home/xyb/underwaterDataset/casia/CASIA_PolyU_SLAM_datasets_20241108/error_calcu_1/global_cam_displacements_1.csv'
-
-input_file = '/home/xyb/underwaterDataset/casia/CASIA_PolyU_SLAM_datasets_20241108/transformer_test/ground_truth_02_one_4.csv'
-output_file = '/home/xyb/underwaterDataset/casia/CASIA_PolyU_SLAM_datasets_20241108/transformer_test/gt_displacement_02_one_4.csv'
+input_file = '/home/xyb/ua_avip/ground_truth_02.csv'
+output_file = '/home/xyb/ua-avip/gt_displacement_02.csv'
 
 def calculate_displacement(pos1, pos2):
     return [pos2[i] - pos1[i] for i in range(3)]
