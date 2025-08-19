@@ -1,4 +1,4 @@
-# ua-avip
+# UA-AVIP
 UA-AVIP: Multi-Modal Fusion for Underwater Localization through Hierarchical Uncertainty Awareness
 
 ## Demo 
