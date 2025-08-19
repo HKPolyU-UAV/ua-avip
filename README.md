@@ -3,7 +3,7 @@ Multi-Modal Fusion for Underwater Localization
 
 ## Demo
 
-![](demo.gif)
+![](demo1.gif)
 
 
 ## Performance Evaluation and Comparison
