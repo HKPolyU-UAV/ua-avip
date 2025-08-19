@@ -3,8 +3,11 @@ Multi-Modal Fusion for Underwater Localization
 
 ## Demo 
 ### Demo on Pool sequences (Speed *5)
-![](demo3.gif) ![](demo4.gif)
-
+Eg 1
+![](demo3.gif) 
+Eg 2
+![](demo4.gif)
+Underwater Scenes
 ![](demo1.gif)
 
 ![](demo2.gif)
