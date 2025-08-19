@@ -1,8 +1,7 @@
 import pandas as pd
 
 # Load the data from the CSV file
-df = pd.read_csv('/home/xyb/underwaterDataset/casia/CASIA_PolyU_SLAM_datasets_20241108/error_calcu_2/vins_vio.csv')
-# df = pd.read_csv('/home/xyb/underwaterDataset/casia/avip_loc_casia/transformerLoc_AVIP/trail03/vins_vo_1216trail03.csv')
+df = pd.read_csv('/home/xyb/ua_avip/vins_vio.csv')
 
 # Extract the relevant columns
 timestamps = df['timestamp'].values
