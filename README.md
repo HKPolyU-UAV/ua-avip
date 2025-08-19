@@ -5,5 +5,6 @@ Multi-Modal Fusion for Underwater Localization
 ### Pool 01
 ![](img/trajectory_comparison_xy_seq01.jpg)
 ### Pool 02
-
+![](img/seq02_traj_1.jpg)
 ### Pool 03
+![](img/trajectory_comparison_xy_seq01.jpg)
